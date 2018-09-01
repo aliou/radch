@@ -4,7 +4,7 @@ defmodule Radch.Chore do
 
   schema "chores" do
     field(:note, :string)
-    field(:period, DateTime.RangeType)
+    field(:period, DateTime.Range)
 
     timestamps()
   end
