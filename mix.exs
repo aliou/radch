@@ -33,10 +33,16 @@ defmodule Radch.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      # Deps from GitHub.
+      {:ecto, github: "elixir-ecto/ecto", ref: "6810bfa", override: true},
+      {:postgrex, github: "elixir-ecto/postgrex", ref: "75da51d", override: true},
+      {:db_connection, github: "elixir-ecto/db_connection", ref: "4947966", override: true},
+
+      # Deps from HexPm.
+      {:jason, "~> 1.1"},
       {:phoenix, "~> 1.3.4"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
