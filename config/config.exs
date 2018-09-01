@@ -10,6 +10,7 @@ config :radch, ecto_repos: [Radch.Repo]
 
 # Configures the endpoint
 config :radch, RadchWeb.Endpoint,
+  load_from_system_env: true,
   url: [host: "localhost"],
   secret_key_base: "DKrYED3rjqybZ0GggD5MPUhVCmS+e3DD7amVam3SO2ETBWQiq4K+eylZD7iycrVy",
   render_errors: [view: RadchWeb.ErrorView, accepts: ~w(html json)],
