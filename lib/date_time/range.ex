@@ -71,4 +71,8 @@ defmodule DateTime.Range do
   def dump(_), do: :error
 end
 
-# TODO: defimpl Inspect, for: DateTime.Range
+defimpl Inspect, for: DateTime.Range do
+  def inspect(%DateTime.Range{lower: lower, upper: upper}, _) do
+    "#DateTime.Range<" <> inspect(to_string(lower)) <> ", " <> inspect(to_string(upper)) <> ">"
+  end
+end
