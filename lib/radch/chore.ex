@@ -18,5 +18,9 @@ defmodule Radch.Chore do
       |> cast(attrs, [:user_id, :note, :period])
       |> cast_assoc(:user)
       |> validate_required([:user_id, :period])
+
+    # The exclusion constraint is actually on both the period and the user_id (see migration),
+    # but there doesn't seem to be a way to tell that to Ecto.
+    changeset |> exclusion_constraint(:period, name: :no_overlaping_chores_for_user)
   end
 end
