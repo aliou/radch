@@ -1,5 +1,9 @@
 # TODO: Enumerable protocol
 defmodule DateTime.Range do
+  @moduledoc """
+  Returns an inclusive range between two DateTimes.
+  """
+
   @behaviour Ecto.Type
 
   @enforce_keys [:lower, :upper]
