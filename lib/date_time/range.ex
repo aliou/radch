@@ -7,7 +7,7 @@ defmodule DateTime.Range do
   @behaviour Ecto.Type
 
   @enforce_keys [:lower, :upper]
-  defstruct [:lower, :upper, lower_inclusive: true, upper_inclusive: true]
+  defstruct [:lower, :upper, lower_inclusive: true, upper_inclusive: false]
 
   @type t :: %__MODULE__{
           lower: DateTime.t(),
@@ -27,11 +27,11 @@ defmodule DateTime.Range do
         lower: DateTime.from_unix!(0),
         lower_inclusive: true,
         upper: DateTime.from_unix!(1),
-        upper_inclusive: true
+        upper_inclusive: false
       }
 
   """
-  def new(lower, upper, lower_inclusive \\ true, upper_inclusive \\ true)
+  def new(lower, upper, lower_inclusive \\ true, upper_inclusive \\ false)
 
   def new(%DateTime{} = lower, %DateTime{} = upper, lower_inclusive, upper_inclusive)
       when is_boolean(lower_inclusive) and is_boolean(upper_inclusive) do
