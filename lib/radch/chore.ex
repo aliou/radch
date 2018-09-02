@@ -6,13 +6,17 @@ defmodule Radch.Chore do
     field(:note, :string)
     field(:period, DateTime.Range)
 
+    belongs_to(:user, Radch.User)
+
     timestamps()
   end
 
   @doc false
   def changeset(chore, attrs) do
-    chore
-    |> cast(attrs, [:note, :period])
-    |> validate_required([:period])
+    changeset =
+      chore
+      |> cast(attrs, [:user_id, :note, :period])
+      |> cast_assoc(:user)
+      |> validate_required([:user_id, :period])
   end
 end
