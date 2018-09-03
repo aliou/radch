@@ -4,7 +4,7 @@ defmodule Radch.Chore do
 
   schema "chores" do
     field(:note, :string)
-    field(:period, DateTime.Range)
+    field(:period, NaiveDateTime.Range)
 
     belongs_to(:user, Radch.User)
 
