@@ -38,6 +38,7 @@ config :radch, RadchWeb.Endpoint,
 
 # Watch static and templates for browser reloading.
 config :radch, RadchWeb.Endpoint,
+  load_from_system_env: true,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
