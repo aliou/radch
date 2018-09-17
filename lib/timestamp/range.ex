@@ -64,7 +64,7 @@ defmodule Timestamp.Range do
   @impl Ecto.Type
   def load(term)
 
-  def load(%Postgrex.Range{} = range) do
+  def load(%Postgrex.Range{lower: %NaiveDateTime{}, upper: %NaiveDateTime{}} = range) do
     {:ok,
      Timestamp.Range.new(
        range.lower,
