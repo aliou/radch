@@ -34,9 +34,8 @@ defmodule Radch.Mixfile do
   defp deps do
     [
       # Deps from GitHub.
-      {:ecto, github: "elixir-ecto/ecto", ref: "6810bfa", override: true},
-      {:postgrex, github: "elixir-ecto/postgrex", ref: "75da51d", override: true},
-      {:db_connection, github: "elixir-ecto/db_connection", ref: "4947966", override: true},
+      {:ecto, github: "elixir-ecto/ecto", ref: "222b12d", override: true},
+      {:postgrex, github: "elixir-ecto/postgrex", ref: "6cabc3b", override: true},
 
       # Deps from HexPm.
       {:jason, "~> 1.1"},
