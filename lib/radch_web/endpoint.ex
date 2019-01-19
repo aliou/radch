@@ -1,7 +1,7 @@
 defmodule RadchWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :radch
 
-  socket("/socket", RadchWeb.UserSocket)
+  socket "/socket", RadchWeb.UserSocket, websocket: []
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -29,7 +29,7 @@ defmodule RadchWeb.Endpoint do
     Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
+    json_decoder: Jason
   )
 
   plug(Plug.MethodOverride)
